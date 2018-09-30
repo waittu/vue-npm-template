@@ -2,7 +2,7 @@
   "name": "vue-npm-template",
   "description": "test template",
   "version": "1.0.0",
-  "author": "tuyican <waittutu@163.com>",
+  "author": "waittu <waittutu@163.com>",
   "license": "MIT",
   "private": false,
   "scripts": {
