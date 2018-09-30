@@ -8,18 +8,22 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'TUSide.js',
-    library: 'TUSide', // 指定的就是你使用require时的模块名
+    filename: 'tu-side.js',
+    library: 'tu-side', // 指定的就是你使用require时的模块名
     libraryTarget: 'umd', // 指定输出格式
-    umdNamedDefine: true ,
+    umdNamedDefine: true,
   },
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [
-          'vue-style-loader',
-          'css-loader'
+          'vue-style-loader', {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          }
         ],
       },
       {
@@ -27,6 +31,13 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
+            loaders: {
+              css: ExtractTextPlugin.extract({
+                fallback: 'vue-style-loader',
+                use: 'css-loader',
+                publicPath: "../"
+              }),
+            }
           }
           // other vue-loader options go here
         }
@@ -80,6 +91,9 @@ if (process.env.NODE_ENV === 'production') {
       compress: {
         warnings: false
       }
+    }),
+    new ExtractTextPlugin({
+      filename: 'TUSide.min.css'
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true

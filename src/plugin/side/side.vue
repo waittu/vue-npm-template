@@ -3,6 +3,94 @@
 */
 <style scoped lang="less">
   /* 进入开始 */
+  //滚动条样式
+.scroll-style {
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #c4c4c4;
+    border-left: 2px solid transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #e5e5e5;
+    border-left: 2px solid transparent;
+  }
+}
+
+//flex 兼容样式
+.flex-wrap {
+  height: 100%;
+  display: flex;
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  flex-direction: column;
+}
+
+.flex-item {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  -moz-box-flex: 1;
+  flex: 1;
+}
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  list-style: none
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal
+}
+
+q:before,
+q:after {
+  content: ''
+}
+
+// abbr
+acronym {
+  border: 0
+}
+
+  
   .project-mask-enter {
     animation: width-enter 0.3s;
   }
