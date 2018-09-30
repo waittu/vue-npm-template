@@ -2,7 +2,7 @@
   "name": "tutu-side",
   "main": "dist/tu-side.js",
   "description": "test template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "waittu <waittutu@163.com>",
   "license": "MIT",
   "private": false,
